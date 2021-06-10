@@ -9,6 +9,7 @@ public class Contacts1 {
         this.phoneNumber = phoneNumber;
     }
 
+    // setters and getters
     public String getFirstName() {
         return firstName;
     }
@@ -33,6 +34,7 @@ public class Contacts1 {
         this.phoneNumber = phoneNumber;
     }
 
+    // Start menu
     public static void printMenu(){
         System.out.println("1. View contacts.\n" +
                 "2. add a new contact.\n" +

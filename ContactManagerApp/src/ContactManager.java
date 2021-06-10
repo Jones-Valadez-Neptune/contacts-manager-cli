@@ -6,13 +6,16 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class ContactManager extends Contacts1{
     public ContactManager(String firstName, String lastName, String phoneNumber) {
         super(firstName, lastName, phoneNumber);
     }
 
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         Path path = Paths.get("src", "Contacts1.java");
         System.out.println(path.toAbsolutePath());
@@ -61,22 +64,37 @@ public class ContactManager extends Contacts1{
 //        }
 
 
-        //Create a place to put information we read from the file
-        List<String> currentContactsList = new ArrayList<>();
 
-        //Read the information from the file
-        try {
-            currentContactsList = Files.readAllLines(toOurDataFile);
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-
-        for (String line : currentContactsList) {
-            System.out.println(line);
-        }
 
         //Method from Contacts1
+        System.out.println("Welcome to the contacts manager. What would you like to do?/n");
         printMenu();
+        int userChoice = scanner.nextInt();
+        switch (userChoice) {
+            case 1:
+                // view contacts
+                //Create a place to put information we read from the file
+                List<String> currentContactsList = new ArrayList<>();
+
+                //Read the information from the file
+                try {
+                    currentContactsList = Files.readAllLines(toOurDataFile);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+
+                for (String line : currentContactsList) {
+                    System.out.println(line);
+                }
+            case 2:
+                // add new contact
+            case 3:
+                // search contact by name
+            case 4:
+                // delete an existing contact
+            case 5:
+                // exit
+        }
     }
 
 }
