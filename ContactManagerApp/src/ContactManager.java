@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class ContactManager extends Contacts1{
+public class ContactManager extends Contacts1 {
     public ContactManager(String firstName, String lastName, String phoneNumber) {
         super(firstName, lastName, phoneNumber);
     }
@@ -44,7 +44,6 @@ public class ContactManager extends Contacts1{
             ioe.printStackTrace();
         }
 
-
         //Write data to a file
 //        List<String> codeupContactList = Arrays.asList("David", "Jay", "Javier", "Jason");
 //
@@ -55,16 +54,6 @@ public class ContactManager extends Contacts1{
 //        } catch (IOException ioe) {
 //            ioe.printStackTrace();
 //        }
-
-        //Append a single item to our list
-//        try{
-//            Files.writeString(toOurDataFile, "Karen\n", StandardOpenOption.APPEND);
-//        } catch (IOException ioe){
-//            ioe.printStackTrace();
-//        }
-
-
-
 
         //Method from Contacts1
         System.out.println("Welcome to the contacts manager. What would you like to do?/n");
@@ -88,6 +77,13 @@ public class ContactManager extends Contacts1{
                 }
             case 2:
                 // add new contact
+
+                //Append a single item to our list
+                try {
+                    Files.writeString(toOurDataFile, "Karen\n", StandardOpenOption.APPEND);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
             case 3:
                 // search contact by name
             case 4:

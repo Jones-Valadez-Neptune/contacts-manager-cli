@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.List;
+
 public class Contacts1 {
     String firstName;
     String lastName;
@@ -42,5 +47,20 @@ public class Contacts1 {
                 "4. Delete an existing contact.\n" +
                 "5. Exit.\n" +
                 "Enter an option (1, 2, 3, 4 or 5): ");
+    }
+
+    public void addContacts() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the first name of the contact...");
+        this.firstName = scanner.nextLine();
+        System.out.println("Please enter the last name of the contact...");
+        this.lastName = scanner.nextLine();
+        System.out.println("Please enter the phone number...");
+        this.phoneNumber = scanner.nextLine();
+
+        List<String> contactsList =  Arrays.asList(firstName + lastName + phoneNumber);
+
+
+
     }
 }
