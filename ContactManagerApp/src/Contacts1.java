@@ -6,9 +6,9 @@ import java.util.Scanner;
 import java.util.List;
 
 public class Contacts1 {
-    String firstName;
-    String lastName;
-    String phoneNumber;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
 
     public Contacts1(String firstName, String lastName, String phoneNumber) {
         this.firstName = firstName;
