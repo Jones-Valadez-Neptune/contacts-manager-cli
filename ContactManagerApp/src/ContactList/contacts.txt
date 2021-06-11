@@ -1,4 +1,3 @@
 karen valadez | 123456789
 John  Doe | 123456789
-Cody Duck | 1234567890
 David Codeup | 1234567890

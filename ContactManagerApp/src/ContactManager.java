@@ -28,7 +28,7 @@ public class ContactManager {
         }
         return 0;
     }
-
+    //Add person to contact list
     public static void addPerson() throws IOException {
         Scanner Scanner = new Scanner(System.in);
         System.out.println(" 2. Add a New Person ");
@@ -46,7 +46,7 @@ public class ContactManager {
         contactList.add(new Contacts1(firstName, lastName, phoneNumber));
         System.out.println(firstName + " " + lastName + " has been successfully added to the contact list ");
     }
-
+    //Prints contact.txt file
     public static void printList() {
         System.out.println("Name | Phone number ");
         System.out.println("-----------------------------");
@@ -62,6 +62,7 @@ public class ContactManager {
         }
         System.out.println("-----------------------------");
     }
+
     //Last name search
     public static void NameSearch() {
         System.out.println("3. Retrieve contacts by name and/or phone number. ");
@@ -82,8 +83,9 @@ public class ContactManager {
         }
     }
 
-    //Delete goes here
+    //Delete contact
     public static void userDelete() {
+        System.out.println("4. Delete an existing contact.");
         System.out.println("What contact would you like to delete?");
         Scanner scanner = new Scanner(System.in);
         String userInputDelete = scanner.nextLine();
@@ -102,11 +104,11 @@ public class ContactManager {
                 listIterator.remove();
                 System.out.println("Contact " + userInputDelete + " has been deleted.");
             }
-        }
-        try {
-            Files.write(ContactsPath, newContacts);
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+            try {
+                Files.write(ContactsPath, newContacts);
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
         }
     }
 
@@ -116,6 +118,4 @@ public class ContactManager {
         System.out.println("Thank you for using our system today!");
         System.exit(0);
     }
-
-
 }

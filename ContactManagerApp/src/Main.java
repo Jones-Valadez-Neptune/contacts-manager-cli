@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
+        //Lines 10-31 create Directory and file
         Path toOurDataPlace = Paths.get("ContactManagerApp/src/ContactList");
         Path toOurDataFile = Paths.get(String.valueOf(toOurDataPlace), "contacts.txt");
         //Create Directory
