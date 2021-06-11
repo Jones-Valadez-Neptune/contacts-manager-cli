@@ -1,8 +1,35 @@
 import java.awt.*;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
+        Path toOurDataPlace = Paths.get("ContactManagerApp/src/ContactList");
+        Path toOurDataFile = Paths.get(String.valueOf(toOurDataPlace), "contacts.txt");
+        //Create Directory
+        try {
+            if (Files.notExists(toOurDataPlace)) {
+                Files.createDirectories(toOurDataPlace);
+            } else {
+                System.out.println("The " + toOurDataPlace + " directory already exists.");
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+        //Create File
+        try {
+            if (Files.notExists(toOurDataFile)) {
+                Files.createFile(toOurDataFile);
+            } else {
+                System.out.println("The " + toOurDataFile + " file already exists.");
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
         boolean mainBoolean = true;
         do {
             int userChoice = ContactManager.printMenu();
