@@ -24,6 +24,10 @@ public class Main {
                     mainBoolean = false;
                     break;
             }
+        } while (mainBoolean);
+
+    }
+}
 
 //            if (userChoice == 1) {
 //                ContactManager.printList();
@@ -38,12 +42,6 @@ public class Main {
 //            } else {
 //                System.out.println("Please enter a valid input...");
 //            }
-
-        } while (mainBoolean);
-
-    }
-
-  }
 
 
 

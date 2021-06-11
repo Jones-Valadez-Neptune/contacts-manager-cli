@@ -29,10 +29,6 @@ public class ContactManager {
         return 0;
     }
 
-//        return userInputInt;
-
-
-
     public static void addPerson() throws IOException {
         Scanner Scanner = new Scanner(System.in);
         System.out.println(" 2. Add a New Person ");
@@ -89,7 +85,7 @@ public class ContactManager {
     //Delete goes here
     public static void userDelete() {
         System.out.println("What contact would you like to delete?");
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
         String userInputDelete = scanner.nextLine();
 
         List<String> newContacts = new ArrayList<>();
@@ -100,7 +96,7 @@ public class ContactManager {
             ioe.printStackTrace();
         }
         Iterator<String> listIterator = newContacts.iterator();
-        while(listIterator.hasNext()) {
+        while (listIterator.hasNext()) {
             String contact = listIterator.next();
             if (contact.toLowerCase().contains(userInputDelete.toLowerCase())) {
                 listIterator.remove();
@@ -115,13 +111,11 @@ public class ContactManager {
     }
 
     //Exit
-    public static void userExit(){
+    public static void userExit() {
         System.out.println("5. Exit Application");
         System.out.println("Thank you for using our system today!");
         System.exit(0);
     }
-
-
 
 
 }
