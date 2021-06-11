@@ -18,9 +18,20 @@ public class ContactManager {
                 "5. Exit Application.\n" +
                 "Please Enter an option (1, 2, 3, 4 or 5): ");
         Scanner myScanner = new Scanner(System.in);
-        int userChoice = myScanner.nextInt();
-        return userChoice;
+        String userChoice = myScanner.nextLine();
+
+        try {
+            int userInputInt = Integer.parseInt(userChoice);
+            return userInputInt;
+        } catch (NumberFormatException e) {
+            System.out.println("Oh nooo! " + e.getMessage() + " is not an integer");
+        }
+        return 0;
     }
+
+//        return userInputInt;
+
+
 
     public static void addPerson() throws IOException {
         Scanner Scanner = new Scanner(System.in);
