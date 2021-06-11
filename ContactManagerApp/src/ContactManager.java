@@ -90,8 +90,9 @@ public class ContactManager {
         Iterator<String> listIterator = newContacts.iterator();
         while(listIterator.hasNext()) {
             String contact = listIterator.next();
-            if (contact.equals(userInputDelete)) {
+            if (contact.equalsIgnoreCase(userInputDelete)) {
                 listIterator.remove();
+                System.out.println("Contact " + userInputDelete + " has been deleted.");
             }
         }
         try {
@@ -100,8 +101,6 @@ public class ContactManager {
             ioe.printStackTrace();
         }
     }
-
-
 
     //Exit
     public static void userExit(){
