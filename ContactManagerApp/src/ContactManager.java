@@ -6,6 +6,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class ContactManager {
+
     public static List<Contacts1> contactList = new ArrayList<>();
 
     // Start menu
@@ -22,14 +23,14 @@ public class ContactManager {
     }
 
     public static void addPerson() throws IOException {
-        Scanner myScanner = new Scanner(System.in);
+        Scanner Scanner = new Scanner(System.in);
         System.out.println(" 1. Add a New Person ");
         System.out.print("  First Name: ");
-        String firstName = myScanner.nextLine();
+        String firstName = Scanner.nextLine();
         System.out.print("  Last Name : ");
-        String lastName = myScanner.nextLine();
+        String lastName = Scanner.nextLine();
         System.out.print("  Phone Number : ");
-        String phoneNumber = myScanner.nextLine();
+        String phoneNumber = Scanner.nextLine();
         Files.write(
                 Paths.get("ContactManagerApp/src/ContactList", "contacts.txt"),
                 Arrays.asList(firstName + " " + lastName + " | " + phoneNumber),
@@ -53,4 +54,25 @@ public class ContactManager {
             System.out.println((i + 1) + ": " + contactList.get(i));
         }
     }
+
+    public static void lastNameSearch() {
+        System.out.println("3. Retrieve contacts by name and/or phone number. ");
+        System.out.print(" Name or Number: ");
+        Scanner myScanner = new Scanner(System.in);
+        String userInputSearchLastName = myScanner.nextLine();
+        Path ContactsPath = Paths.get("ContactManagerApp/src/ContactList", "contacts.txt");
+        List<String> contactList;
+        try {
+            contactList = Files.readAllLines(ContactsPath);
+            for (String person : contactList) {
+                if (person.toLowerCase().contains(userInputSearchLastName.toLowerCase())) {
+                    System.out.println("Contact:\n" + person);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
