@@ -62,7 +62,7 @@ public class ContactManager {
         }
         System.out.println("-----------------------------");
     }
-
+    //Last name search
     public static void lastNameSearch() {
         System.out.println("3. Retrieve contacts by name and/or phone number. ");
         System.out.print(" Name or Number: ");

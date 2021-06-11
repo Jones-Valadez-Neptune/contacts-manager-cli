@@ -1,10 +1,3 @@
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.List;
-
 public class Contacts1 {
     public String firstName;
     public String lastName;
