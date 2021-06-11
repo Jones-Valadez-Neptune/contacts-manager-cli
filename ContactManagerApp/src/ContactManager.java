@@ -24,7 +24,7 @@ public class ContactManager {
 
     public static void addPerson() throws IOException {
         Scanner Scanner = new Scanner(System.in);
-        System.out.println(" 1. Add a New Person ");
+        System.out.println(" 2. Add a New Person ");
         System.out.print("  First Name: ");
         String firstName = Scanner.nextLine();
         System.out.print("  Last Name : ");
@@ -78,6 +78,7 @@ public class ContactManager {
 
     //Exit
     public static void userExit(){
+        System.out.println("5. Exit Application");
         System.out.println("Thank you for using our system today!");
         System.exit(0);
     }
