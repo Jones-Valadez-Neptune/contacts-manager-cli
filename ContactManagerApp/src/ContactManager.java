@@ -75,6 +75,33 @@ public class ContactManager {
     }
 
     //Delete goes here
+    public static void userDelete() {
+        System.out.println("What contact would you like to delete?");
+        Scanner scanner = new Scanner (System.in);
+        String userInputDelete = scanner.nextLine();
+
+        List<String> newContacts = new ArrayList<>();
+        Path ContactsPath = Paths.get("ContactManagerApp/src/ContactList", "contacts.txt");
+        try {
+            newContacts = Files.readAllLines(ContactsPath);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+        Iterator<String> listIterator = newContacts.iterator();
+        while(listIterator.hasNext()) {
+            String contact = listIterator.next();
+            if (contact.equals(userInputDelete)) {
+                listIterator.remove();
+            }
+        }
+        try {
+            Files.write(ContactsPath, newContacts);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
+
+
 
     //Exit
     public static void userExit(){

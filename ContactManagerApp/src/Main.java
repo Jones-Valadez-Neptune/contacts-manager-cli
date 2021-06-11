@@ -15,8 +15,8 @@ public class Main {
                 ContactManager.lastNameSearch();
                 break;
             case 4:
-                //Delete existing user
-                //break;
+                ContactManager.userDelete();
+                break;
             case 5:
                 ContactManager.userExit();
                 break;
