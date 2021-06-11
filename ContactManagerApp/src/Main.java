@@ -23,8 +23,6 @@ public class Main {
                     ContactManager.userExit();
                     mainBoolean = false;
                     break;
-                default:
-                    System.out.println("Please enter a valid input...");
             }
 
 //            if (userChoice == 1) {

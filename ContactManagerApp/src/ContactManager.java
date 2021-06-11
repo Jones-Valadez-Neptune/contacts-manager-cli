@@ -24,7 +24,7 @@ public class ContactManager {
             int userInputInt = Integer.parseInt(userChoice);
             return userInputInt;
         } catch (NumberFormatException e) {
-            System.out.println("Oh nooo! " + e.getMessage() + " is not an integer");
+            System.out.println(e.getMessage() + " is not an option. Please pick a valid option.");
         }
         return 0;
     }
@@ -64,6 +64,7 @@ public class ContactManager {
         for (int i = 0; i < Objects.requireNonNull(contactList).size(); i += 1) {
             System.out.println((i + 1) + ": " + contactList.get(i));
         }
+        System.out.println("-----------------------------");
     }
 
     public static void lastNameSearch() {
@@ -101,7 +102,7 @@ public class ContactManager {
         Iterator<String> listIterator = newContacts.iterator();
         while(listIterator.hasNext()) {
             String contact = listIterator.next();
-            if (contact.equalsIgnoreCase(userInputDelete)) {
+            if (contact.toLowerCase().contains(userInputDelete.toLowerCase())) {
                 listIterator.remove();
                 System.out.println("Contact " + userInputDelete + " has been deleted.");
             }
