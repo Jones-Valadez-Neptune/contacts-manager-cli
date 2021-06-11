@@ -14,7 +14,7 @@ public class Main {
                     ContactManager.addPerson();
                     break;
                 case 3:
-                    ContactManager.lastNameSearch();
+                    ContactManager.NameSearch();
                     break;
                 case 4:
                     ContactManager.userDelete();
@@ -25,7 +25,6 @@ public class Main {
                     break;
             }
         } while (mainBoolean);
-
     }
 }
 

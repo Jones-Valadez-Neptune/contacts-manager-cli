@@ -63,17 +63,17 @@ public class ContactManager {
         System.out.println("-----------------------------");
     }
     //Last name search
-    public static void lastNameSearch() {
+    public static void NameSearch() {
         System.out.println("3. Retrieve contacts by name and/or phone number. ");
         System.out.print(" Name or Number: ");
         Scanner myScanner = new Scanner(System.in);
-        String userInputSearchLastName = myScanner.nextLine();
+        String userInputSearch = myScanner.nextLine();
         Path ContactsPath = Paths.get("ContactManagerApp/src/ContactList", "contacts.txt");
         List<String> contactList;
         try {
             contactList = Files.readAllLines(ContactsPath);
             for (String person : contactList) {
-                if (person.toLowerCase().contains(userInputSearchLastName.toLowerCase())) {
+                if (person.toLowerCase().contains(userInputSearch.toLowerCase())) {
                     System.out.println("Contact:\n" + person);
                 }
             }
