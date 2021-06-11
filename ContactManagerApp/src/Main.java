@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.io.IOException;
 
 public class Main {
@@ -17,8 +18,10 @@ public class Main {
                 //Delete existing user
                 //break;
             case 5:
-                //Exit
-                //break;
+                ContactManager.userExit();
+                break;
+            default:
+                //"invalid input"
         }
 
 

@@ -12,11 +12,11 @@ public class ContactManager {
     // Start menu
     public static int printMenu() {
         System.out.println("1. View contacts.\n" +
-                "2. add a new contact.\n" +
+                "2. Add a new contact.\n" +
                 "3. Search a contact by name.\n" +
                 "4. Delete an existing contact.\n" +
-                "5. Exit.\n" +
-                "Enter an option (1, 2, 3, 4 or 5): ");
+                "5. Exit Application.\n" +
+                "Please Enter an option (1, 2, 3, 4 or 5): ");
         Scanner myScanner = new Scanner(System.in);
         int userChoice = myScanner.nextInt();
         return userChoice;
@@ -73,6 +73,16 @@ public class ContactManager {
             e.printStackTrace();
         }
     }
+
+    //Delete goes here
+
+    //Exit
+    public static void userExit(){
+        System.out.println("Thank you for using our system today!");
+        System.exit(0);
+    }
+
+
 
 
 }
